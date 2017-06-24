@@ -1,0 +1,47 @@
+[
+	{ "keys": ["ctrl+shift+t"], "command": "delete_trailing_spaces" },
+	//删除一行
+	{
+        "keys": ["ctrl+d"],
+        "command": "run_macro_file",
+        "args": {
+            "file": "Packages/Default/Delete Line.sublime-macro"
+        }
+    },
+    // 复制选中行到行后
+    {
+        "keys": ["ctrl+alt+down"],
+        "command": "duplicate_line"
+    },
+    // 自动提示、补全
+    {
+        "keys": ["alt+/"],
+        "command": "auto_complete"
+    }, {
+        "keys": ["alt+/"],
+        "command": "replace_completion_with_auto_complete",
+        "context": [{
+            "key": "last_command",
+            "operator": "equal",
+            "operand": "insert_best_completion"
+        }, {
+            "key": "auto_complete_visible",
+            "operator": "equal",
+            "operand": false
+        }, {
+            "key": "setting.tab_completion",
+            "operator": "equal",
+            "operand": true
+        }]
+    },
+    // 与上行互换
+    {
+        "keys": ["alt+up"],
+        "command": "swap_line_up"
+    },
+    // 与下行互换
+    {
+        "keys": ["alt+down"],
+        "command": "swap_line_down"
+    }
+]
